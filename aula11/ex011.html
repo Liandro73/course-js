@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBGE</title>
+</head>
+<body>
+    <h1>Sistema de Controle de Nacionalidade</h1>
+    Qual é seu país natal? <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Consultar" onclick="consultar()">
+    <div id="resultado">
+
+    </div>
+    <script>
+        function consultar() {
+            var txtpais = window.document.getElementById('txtpais')
+            var res = window.document.querySelector('div#resultado')
+            res.innerHTML = `<p>Vivendo em <strong>${txtpais.value}</strong></p>`
+            if (txtpais.value != 'Brasil') {
+                res.innerHTML += `<p>Você é <strong>Estrangeiro!</strong></p>`
+            } else {
+                res.innerHTML += `<p>Você é <strong>Brasileiro!</strong></p>`
+            }
+        }
+    </script>
+</body>
+</html>
